@@ -9,6 +9,9 @@ import HeicConvert from './pages/HeicConvert'
 import ImageToPdf from './pages/ImageToPdf'
 import ImageRotate from './pages/ImageRotate'
 import GifMaker from './pages/GifMaker'
+import Privacy from './pages/Privacy'
+import Terms from './pages/Terms'
+import About from './pages/About'
 
 export default function App() {
   return (
@@ -23,6 +26,9 @@ export default function App() {
         <Route path="/image-to-pdf" element={<ImageToPdf />} />
         <Route path="/rotate" element={<ImageRotate />} />
         <Route path="/gif-maker" element={<GifMaker />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/about" element={<About />} />
       </Route>
     </Routes>
   )

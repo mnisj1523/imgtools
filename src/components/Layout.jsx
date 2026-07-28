@@ -63,6 +63,11 @@ export default function Layout() {
       <footer className="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500 mb-16 sm:mb-0">
         <p>ImgTools — 브라우저에서 바로 처리, 서버 업로드 없음</p>
         <p className="mt-1">모든 파일은 내 컴퓨터에서만 처리됩니다.</p>
+        <div className="mt-3 flex justify-center gap-4">
+          <Link to="/about" className="text-gray-400 hover:text-gray-600 no-underline">소개</Link>
+          <Link to="/privacy" className="text-gray-400 hover:text-gray-600 no-underline">개인정보처리방침</Link>
+          <Link to="/terms" className="text-gray-400 hover:text-gray-600 no-underline">이용약관</Link>
+        </div>
       </footer>
 
       <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
