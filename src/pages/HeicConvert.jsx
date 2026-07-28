@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
+import { AdBanner } from '../components/Layout'
 
 function loadImage(file) {
   return new Promise((resolve, reject) => {
@@ -11,6 +12,12 @@ function loadImage(file) {
 }
 
 export default function HeicConvert() {
+  useEffect(() => {
+    document.title = 'HEIC to JPG 변환 - 아이폰 사진 무료 변환 | ImgTools'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 HEIC to JPG 변환 도구. 아이폰 사진(HEIC/HEIF)을 JPG로 변환하세요. 품질 조절 가능. 서버 업로드 없이 브라우저에서 안전하게 처리.')
+  }, [])
+
   const [images, setImages] = useState([])
   const [quality, setQuality] = useState(0.92)
   const [results, setResults] = useState([])
@@ -133,6 +140,18 @@ export default function HeicConvert() {
           )}
         </div>
       )}
+
+      <AdBanner position="결과 하단" />
+
+      <section className="mt-10 border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">HEIC 변환이란?</h2>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          HEIC(High Efficiency Image Container)는 아이폰에서 기본 사용되는 이미지 포맷입니다.
+          HEIC는 JPG보다 효율적이지만, Windows PC나 일부 웹사이트에서 호환되지 않는 경우가 많습니다.
+          ImgTools의 HEIC 변환 도구를 사용하면 아이폰 사진을 널리 호환되는 JPG 형식으로 변환할 수 있습니다.
+          Safari 또는 최신 Chrome 브라우저에서 가장 잘 작동합니다.
+        </p>
+      </section>
     </div>
   )
 }

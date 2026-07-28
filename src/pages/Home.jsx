@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const tools = [
@@ -52,6 +53,12 @@ const tools = [
 ]
 
 export default function Home() {
+  useEffect(() => {
+    document.title = 'ImgTools - 무료 온라인 이미지 편집 도구 | 리사이즈, 변환, 압축'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 이미지 편집 도구. 이미지 리사이즈, 포맷 변환(PNG, JPG, WebP), 압축, 자르기, HEIC 변환, PDF 변환, 회전, GIF 만들기. 서버 업로드 없이 브라우저에서 바로 처리.')
+  }, [])
+
   return (
     <div>
       <section className="text-center py-12">

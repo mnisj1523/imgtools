@@ -1,6 +1,7 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { jsPDF } from 'jspdf'
 import FileDropZone from '../components/FileDropZone'
+import { AdBanner } from '../components/Layout'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -11,6 +12,12 @@ function loadImage(file) {
 }
 
 export default function ImageToPdf() {
+  useEffect(() => {
+    document.title = '이미지 PDF 변환 - 여러 이미지를 PDF로 합치기 | ImgTools'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 이미지 to PDF 변환 도구. 여러 장의 이미지를 하나의 PDF로 합치세요. 순서 변경, 용지 크기, 여백 설정 지원. 서버 업로드 없이 안전하게 처리.')
+  }, [])
+
   const [images, setImages] = useState([])
   const [pageSize, setPageSize] = useState('a4')
   const [margin, setMargin] = useState(10)
@@ -174,6 +181,18 @@ export default function ImageToPdf() {
           </div>
         </div>
       )}
+
+      <AdBanner position="결과 하단" />
+
+      <section className="mt-10 border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지를 PDF로 변환하는 방법</h2>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          여러 장의 이미지를 하나의 PDF 파일로 합치면 문서 공유, 인쇄, 보관이 편리합니다.
+          ImgTools의 PDF 변환 도구는 이미지 순서를 드래그로 변경할 수 있고,
+          A4, Letter 등 다양한 용지 크기와 여백 설정을 지원합니다.
+          스캔한 문서, 발표 자료, 포트폴리오 등을 PDF로 만들어보세요.
+        </p>
+      </section>
     </div>
   )
 }

@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
+import { AdBanner } from '../components/Layout'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -16,6 +17,12 @@ const fmtSize = (bytes) => {
 }
 
 export default function ImageCompress() {
+  useEffect(() => {
+    document.title = '이미지 압축 - 무료 온라인 이미지 용량 줄이기 | ImgTools'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 이미지 압축 도구. 이미지 품질을 조절하여 파일 용량을 줄이세요. 압축률 실시간 확인. 서버 업로드 없이 브라우저에서 안전하게 처리.')
+  }, [])
+
   const [images, setImages] = useState([])
   const [quality, setQuality] = useState(70)
   const [results, setResults] = useState([])
@@ -156,6 +163,18 @@ export default function ImageCompress() {
           )}
         </div>
       )}
+
+      <AdBanner position="결과 하단" />
+
+      <section className="mt-10 border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 압축이란?</h2>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          이미지 압축은 이미지 파일의 용량을 줄이는 기능입니다.
+          웹사이트 로딩 속도 개선, 이메일 첨부 용량 제한 해결, 저장 공간 절약 등에 유용합니다.
+          ImgTools는 품질 슬라이더를 통해 압축 정도를 세밀하게 조절할 수 있으며,
+          원본 대비 절약된 용량을 퍼센트로 바로 확인할 수 있습니다.
+        </p>
+      </section>
     </div>
   )
 }

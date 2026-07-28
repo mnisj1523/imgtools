@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
+import { AdBanner } from '../components/Layout'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -19,6 +20,12 @@ function resizeImage(img, width, height) {
 }
 
 export default function ImageResize() {
+  useEffect(() => {
+    document.title = '이미지 리사이즈 - 무료 온라인 이미지 크기 변경 | ImgTools'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 이미지 리사이즈 도구. 픽셀 또는 퍼센트로 이미지 크기를 자유롭게 변경하세요. 비율 유지, 일괄 처리 지원. 서버 업로드 없이 브라우저에서 안전하게 처리.')
+  }, [])
+
   const [images, setImages] = useState([])
   const [mode, setMode] = useState('pixel')
   const [width, setWidth] = useState('')
@@ -214,6 +221,19 @@ export default function ImageResize() {
           )}
         </div>
       )}
+
+      <AdBanner position="결과 하단" />
+
+      <section className="mt-10 border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 리사이즈란?</h2>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          이미지 리사이즈는 이미지의 가로·세로 크기를 원하는 사이즈로 변경하는 기능입니다.
+          블로그, SNS, 쇼핑몰 상품 이미지 등 용도에 맞는 크기로 손쉽게 조절할 수 있습니다.
+          ImgTools의 리사이즈 도구는 픽셀 단위 또는 퍼센트 단위로 크기를 지정할 수 있으며,
+          비율 유지 옵션을 통해 이미지가 찌그러지지 않도록 보호합니다.
+          모든 처리는 브라우저에서 이루어지므로 파일이 외부로 전송되지 않습니다.
+        </p>
+      </section>
     </div>
   )
 }

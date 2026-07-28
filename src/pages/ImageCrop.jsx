@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
+import { AdBanner } from '../components/Layout'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -10,6 +11,12 @@ function loadImage(file) {
 }
 
 export default function ImageCrop() {
+  useEffect(() => {
+    document.title = '이미지 자르기 - 무료 온라인 이미지 크롭 | ImgTools'
+    document.querySelector('meta[name="description"]')?.setAttribute('content',
+      '무료 온라인 이미지 자르기 도구. 드래그로 원하는 영역을 선택하여 이미지를 잘라보세요. 코너 핸들로 정밀 조절 가능. 서버 업로드 없이 안전하게 처리.')
+  }, [])
+
   const [image, setImage] = useState(null)
   const [result, setResult] = useState(null)
   const canvasRef = useRef(null)
@@ -257,6 +264,18 @@ export default function ImageCrop() {
           )}
         </div>
       )}
+
+      <AdBanner position="결과 하단" />
+
+      <section className="mt-10 border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 자르기란?</h2>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          이미지 자르기(크롭)는 이미지에서 원하는 부분만 선택하여 잘라내는 기능입니다.
+          프로필 사진 편집, 불필요한 배경 제거, 특정 영역 강조 등에 활용할 수 있습니다.
+          ImgTools의 크롭 도구는 마우스 드래그로 영역을 선택하고 코너 핸들로 정밀하게 조절할 수 있으며,
+          터치 기기에서도 사용 가능합니다.
+        </p>
+      </section>
     </div>
   )
 }
