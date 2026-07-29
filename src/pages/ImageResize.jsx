@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
-import { AdBanner } from '../components/Layout'
+import ToolGuide from '../components/ToolGuide'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -222,18 +222,8 @@ export default function ImageResize() {
         </div>
       )}
 
-      <AdBanner position="결과 하단" />
 
-      <section className="mt-10 border-t border-gray-200 pt-8">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 리사이즈란?</h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
-          이미지 리사이즈는 이미지의 가로·세로 크기를 원하는 사이즈로 변경하는 기능입니다.
-          블로그, SNS, 쇼핑몰 상품 이미지 등 용도에 맞는 크기로 손쉽게 조절할 수 있습니다.
-          ImgTools의 리사이즈 도구는 픽셀 단위 또는 퍼센트 단위로 크기를 지정할 수 있으며,
-          비율 유지 옵션을 통해 이미지가 찌그러지지 않도록 보호합니다.
-          모든 처리는 브라우저에서 이루어지므로 파일이 외부로 전송되지 않습니다.
-        </p>
-      </section>
+      <ToolGuide slug="/resize" />
     </div>
   )
 }

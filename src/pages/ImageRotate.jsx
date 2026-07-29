@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
-import { AdBanner } from '../components/Layout'
+import ToolGuide from '../components/ToolGuide'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -168,18 +168,8 @@ export default function ImageRotate() {
         </div>
       )}
 
-      <AdBanner position="결과 하단" />
 
-      <section className="mt-10 border-t border-gray-200 pt-8">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 회전/뒤집기란?</h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
-          이미지 회전은 사진의 방향을 90°, 180° 등으로 돌리는 기능이며,
-          뒤집기는 좌우 또는 상하로 이미지를 반전시키는 기능입니다.
-          스마트폰으로 촬영한 사진의 방향이 잘못된 경우나,
-          셀카를 좌우 반전할 때 유용합니다.
-          ImgTools는 실시간 미리보기를 제공하여 결과를 즉시 확인할 수 있습니다.
-        </p>
-      </section>
+      <ToolGuide slug="/rotate" />
     </div>
   )
 }

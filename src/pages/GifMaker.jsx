@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import FileDropZone from '../components/FileDropZone'
-import { AdBanner } from '../components/Layout'
+import ToolGuide from '../components/ToolGuide'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -323,17 +323,8 @@ export default function GifMaker() {
         </div>
       )}
 
-      <AdBanner position="결과 하단" />
 
-      <section className="mt-10 border-t border-gray-200 pt-8">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">GIF 만들기란?</h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
-          GIF(Graphics Interchange Format)는 여러 프레임을 순서대로 보여주어 움직이는 이미지를 만드는 포맷입니다.
-          ImgTools의 GIF 메이커는 여러 장의 이미지를 업로드하여 애니메이션 GIF를 만들 수 있습니다.
-          프레임 순서 변경, 재생 속도 조절, 출력 크기 설정이 가능하며,
-          모든 처리가 브라우저에서 이루어져 서버로 파일이 전송되지 않습니다.
-        </p>
-      </section>
+      <ToolGuide slug="/gif-maker" />
     </div>
   )
 }
