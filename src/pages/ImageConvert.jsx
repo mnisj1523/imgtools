@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import FileDropZone from '../components/FileDropZone'
-import { AdBanner } from '../components/Layout'
+import ToolGuide from '../components/ToolGuide'
 
 function loadImage(file) {
   return new Promise((resolve) => {
@@ -185,17 +185,8 @@ export default function ImageConvert() {
         </div>
       )}
 
-      <AdBanner position="결과 하단" />
 
-      <section className="mt-10 border-t border-gray-200 pt-8">
-        <h2 className="text-lg font-bold text-gray-800 mb-2">이미지 포맷 변환이란?</h2>
-        <p className="text-sm text-gray-500 leading-relaxed">
-          이미지 포맷 변환은 PNG, JPG(JPEG), WebP 등 서로 다른 이미지 형식 간에 변환하는 기능입니다.
-          PNG는 투명 배경을 지원하고, JPG는 사진에 적합한 압축을 제공하며,
-          WebP는 최신 웹 표준으로 더 작은 파일 크기를 제공합니다.
-          용도에 맞는 최적의 포맷으로 변환하여 웹 성능을 개선하거나 호환성을 확보하세요.
-        </p>
-      </section>
+      <ToolGuide slug="/convert" />
     </div>
   )
 }

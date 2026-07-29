@@ -11,19 +11,6 @@ const tools = [
   { path: '/gif-maker', label: 'GIF 만들기', icon: '🎞️' },
 ]
 
-function AdBanner({ position }) {
-  return (
-    <div className="w-full flex justify-center my-2">
-      <div className="bg-gray-100 border border-dashed border-gray-300 rounded text-gray-400 text-xs flex items-center justify-center"
-        style={{ width: '100%', maxWidth: '728px', height: '90px' }}>
-        광고 영역 ({position})
-      </div>
-    </div>
-  )
-}
-
-export { AdBanner }
-
 export default function Layout() {
   const { pathname } = useLocation()
 
@@ -52,13 +39,9 @@ export default function Layout() {
         </div>
       </header>
 
-      <AdBanner position="상단" />
-
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-6">
         <Outlet />
       </main>
-
-      <AdBanner position="하단" />
 
       <footer className="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500 mb-16 sm:mb-0">
         <p>ImgTools — 브라우저에서 바로 처리, 서버 업로드 없음</p>

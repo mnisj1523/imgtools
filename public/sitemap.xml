@@ -2,56 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://imgtools-wheat.vercel.app/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/resize</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/convert</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/compress</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/crop</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/heic-to-jpg</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/image-to-pdf</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/rotate</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://imgtools-wheat.vercel.app/gif-maker</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://imgtools-wheat.vercel.app/about</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://imgtools-wheat.vercel.app/privacy</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://imgtools-wheat.vercel.app/terms</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
